@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="50px" viewBox="0 0 200 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>PILOTING Logo White</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo">
+            <path d="M35,10 C35,10 40,15 40,25 C40,35 35,40 35,40" id="Path" stroke="#FF6B38" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M25,10 C25,10 20,15 20,25 C20,35 25,40 25,40" id="Path" stroke="#FF6B38" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M15,25 L45,25" id="Path" stroke="#FF6B38" stroke-width="3" stroke-linecap="round"></path>
+            <circle id="Oval" stroke="#FFFFFF" stroke-width="3" cx="30" cy="25" r="20"></circle>
+            <path d="M55,20 L55,40 L60,40 L60,20 L65,20 L65,15 L50,15 L50,20 L55,20 Z M70,15 L70,40 L75,40 L75,15 L70,15 Z M80,15 L80,40 L95,40 L95,35 L85,35 L85,30 L92,30 L92,25 L85,25 L85,20 L95,20 L95,15 L80,15 Z M105,20 L105,40 L110,40 L110,20 L115,20 L115,15 L100,15 L100,20 L105,20 Z M120,15 L120,40 L125,40 L125,15 L120,15 Z M130,15 L130,40 L135,40 L135,30 L140,30 L140,40 L145,40 L145,15 L140,15 L140,25 L135,25 L135,15 L130,15 Z M155,15 L150,15 L150,40 L155,40 L155,15 Z M160,15 L160,40 L175,40 L175,35 L165,35 L165,30 L172,30 L172,25 L165,25 L165,20 L175,20 L175,15 L160,15 Z" id="PILOTING" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

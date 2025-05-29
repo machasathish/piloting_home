@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ & Timeline Example (Bootstrap 5.1.3)</title>
+  <!-- Bootstrap 5.1.3 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU0MZ4fFhe61sjvUCB8EHNfIV1pvoC1zVYW3"
+    crossorigin="anonymous"
+  />
+
+  <style>
+    /* ======================
+       FAQ Section Styling
+       ====================== */
+    .faq-section {
+      padding: 4rem 0;
+      background-color: #f8f9fa;
+    }
+    .faq-section .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .faq-section .section-subtitle {
+      color: #6c757d;
+      margin-bottom: 2rem;
+    }
+    .faq-section .btn-contact {
+      margin-top: 1.5rem;
+    }
+
+    /* ======================
+       Timeline Section Styling
+       ====================== */
+    .timeline-section {
+      padding: 4rem 0;
+      background-color: #fff;
+    }
+    .timeline-section .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .timeline-section .section-subtitle {
+      color: #6c757d;
+      margin-bottom: 3rem;
+    }
+
+    /* The container for the vertical line */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+    /* The vertical line itself */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background-color: #dee2e6;
+      transform: translateX(-50%);
+    }
+
+    /* Each timeline item wrapper */
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1rem 2rem;
+    }
+    /* Align left items on the left side */
+    .timeline-item-left {
+      left: 0;
+      text-align: right;
+    }
+    /* Align right items on the right side */
+    .timeline-item-right {
+      left: 50%;
+      text-align: left;
+    }
+    /* The circle with the step number */
+    .timeline-item .timeline-icon {
+      position: absolute;
+      top: 1.5rem;
+      left: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-left: -1.25rem; /* half of width */
+      background-color: #0d6efd; /* Bootstrap primary */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      z-index: 1;
+    }
+    /* The content box (white card) */
+    .timeline-item .timeline-content {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+    }
+    /* Add a little arrow/connector from the box to the center line */
+    .timeline-item-left .timeline-content::after {
+      content: "";
+      position: absolute;
+      top: 1.875rem; /* roughly vertical center of content */
+      right: -0.5rem;
+      border-width: 0.5rem 0 0.5rem 0.5rem;
+      border-style: solid;
+      border-color: transparent transparent transparent #f8f9fa;
+    }
+    .timeline-item-right .timeline-content::after {
+      content: "";
+      position: absolute;
+      top: 1.875rem;
+      left: -0.5rem;
+      border-width: 0.5rem 0.5rem 0.5rem 0;
+      border-style: solid;
+      border-color: transparent #f8f9fa transparent transparent;
+    }
+  </style>
+</head>
+<body>
+  <!-- ======================
+       FAQ SECTION
+       ====================== -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Find answers to common questions about US flight training for Indian students.
+        </p>
+      </div>
+
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse1"
+              aria-expanded="false"
+              aria-controls="faqCollapse1"
+            >
+              What are the advantages of training in the US versus India?
+            </button>
+          </h2>
+          <div
+            id="faqCollapse1"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeading1"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              <!-- You can put the answer text here -->
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante
+                venenatis dapibus posuere velit aliquet.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading2">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse2"
+              aria-expanded="false"
+              aria-controls="faqCollapse2"
+            >
+              How much does US flight training typically cost?
+            </button>
+          </h2>
+          <div
+            id="faqCollapse2"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeading2"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              <p>
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+                sem nec elit. Donec id elit non mi porta gravida at eget metus.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading3">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse3"
+              aria-expanded="false"
+              aria-controls="faqCollapse3"
+            >
+              What visa do I need for flight training in the US?
+            </button>
+          </h2>
+          <div
+            id="faqCollapse3"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeading3"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              <p>
+                Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque
+                ornare sem lacinia quam venenatis vestibulum.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading4">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse4"
+              aria-expanded="false"
+              aria-controls="faqCollapse4"
+            >
+              How long does it take to complete flight training in the US?
+            </button>
+          </h2>
+          <div
+            id="faqCollapse4"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeading4"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              <p>
+                Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Etiam
+                porta sem malesuada magna mollis euismod.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-contact">
+          Contact Us
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================
+       TIMELINE SECTION
+       ====================== -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Your Journey to the Skies</h2>
+        <p class="section-subtitle">
+          A straightforward process designed to get you from ground school to the cockpit with expert
+          guidance every step of the way.
+        </p>
+      </div>
+
+      <!-- TIMELINE CONTAINER -->
+      <div class="timeline">
+        <!-- Step 1 (LEFT) -->
+        <div class="timeline-item timeline-item-left">
+          <div class="timeline-icon">1</div>
+          <div class="timeline-content">
+            <h5>Free Consultation</h5>
+            <p>Schedule a personalized consultation to discuss your goals, budget, and timeline.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 (RIGHT) -->
+        <div class="timeline-item timeline-item-right">
+          <div class="timeline-icon">2</div>
+          <div class="timeline-content">
+            <h5>School Selection</h5>
+            <p>We match you with accredited US flight schools based on your specific requirements.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 (LEFT) -->
+        <div class="timeline-item timeline-item-left">
+          <div class="timeline-icon">3</div>
+          <div class="timeline-content">
+            <h5>Application &amp; Visa</h5>
+            <p>Receive step-by-step guidance through the application and student visa process.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 (RIGHT) -->
+        <div class="timeline-item timeline-item-right">
+          <div class="timeline-icon">4</div>
+          <div class="timeline-content">
+            <h5>Training &amp; Support</h5>
+            <p>Get ongoing support throughout your US flight training experience.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA BUTTON UNDER TIMELINE -->
+      <div class="text-center mt-5">
+        <button type="button" class="btn btn-warning px-4 py-2">
+          Schedule Free Consultation
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap Bundle JS (includes Popper) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgY+h1K/24QxNrxE+E5YJIvEXQfLMW3icxOjSun"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>
