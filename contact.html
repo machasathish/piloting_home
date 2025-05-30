@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - PILOTING</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </noscript>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <div class="logo logo-dark logo-flex">
+        <a href="index.html" class="navbar-brand logo-link-flex logo_badge logo">
+          <img src="img/logo.png" alt="PILOTING Logo">
+          <h3 id="animated-title" class="title animated-title">
+            <span class="word">PILOTING</span>
+            <span class="word">FOR</span>
+            <span class="word">PILOTS</span>
+          </h3>
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="benefits.html">Benefits</a></li>
+          <li class="nav-item"><a class="nav-link" href="journey.html">Your Journey</a></li>
+          <li class="nav-item"><a class="nav-link" href="testimonials.html">Success Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-3"><a class="btn btn-primary" href="apply.html">Apply Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" style="background-image: url('https://images.pexels.com/photos/2873486/pexels-photo-2873486.jpeg');">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row hero-content">
+        <div class="col-lg-8 col-md-10">
+          <div class="badge">CONTACT US</div>
+          <h1 class="display-4 fw-bold">Get in Touch with <span class="highlight">PILOTING</span></h1>
+          <p class="lead">Have questions about our programs? Ready to start your aviation journey? We're here to help!</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="contact-info p-4 bg-primary text-white rounded-lg">
+            <h3 class="mb-4">Contact Information</h3>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-3">
+                <i class="fas fa-map-marker-alt me-2"></i>
+                123 Aviation Way<br>
+                Miami, FL 33101
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-phone me-2"></i>
+                +1 (555) 123-4567
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-envelope me-2"></i>
+                info@piloting.com
+              </li>
+            </ul>
+            <h4 class="h5 mb-3">Office Hours</h4>
+            <ul class="list-unstyled">
+              <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+              <li>Saturday: 10:00 AM - 4:00 PM</li>
+              <li>Sunday: Closed</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <form id="contactForm" class="p-4 bg-white rounded-lg shadow-sm">
+            <h3 class="mb-4">Send Us a Message</h3>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="subject" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Visit Our Location</h2>
+        <p class="section-subtitle">Come see our facilities and meet our team in person</p>
+      </div>
+      <div class="ratio ratio-21x9">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.688297931789!2d-80.29062688497283!3d25.79589998362397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6c6e9f2e2d7%3A0x7f9b3f5c5b5b5b5b!2sMiami%20International%20Airport!5e0!3m2!1sen!2sus!4v1625589876543!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 mb-4 mb-lg-0">
+          <img src="img/logo-white.svg" alt="PILOTING Logo" class="footer-logo mb-3">
+          <p>Helping future pilots achieve their dreams of flying professionally in the USA since 2015.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="benefits.html">Benefits</a></li>
+            <li><a href="journey.html">Process</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+          <h5>Programs</h5>
+          <ul class="footer-links">
+            <li><a href="programs.html#cpl">Commercial Pilot (CPL)</a></li>
+            <li><a href="programs.html#ppl">Private Pilot License (PPL)</a></li>
+            <li><a href="programs.html#ir">Instrument Rating (IR)</a></li>
+            <li><a href="programs.html#me">Multi-Engine Rating (ME)</a></li>
+            <li><a href="programs.html#cfi">Flight Instructor (CFI)</a></li>
+            <li><a href="programs.html#atp">Airline Transport Pilot (ATP)</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5>Contact Us</h5>
+          <ul class="footer-contact">
+            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+            <li><i class="fas fa-envelope"></i> info@piloting.com</li>
+          </ul>
+          <div class="newsletter mt-3">
+            <p>Subscribe to our newsletter</p>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Your email">
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom mt-5 pt-4">
+        <p>© 2025 PILOTING. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Go to Top Button -->
+  <div class="rbt-progress-parent">
+    <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
