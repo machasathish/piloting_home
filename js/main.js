@@ -201,33 +201,41 @@ window.onload = async function() {
 document.addEventListener('DOMContentLoaded', function() {
     // Timeline consultation button
     const consultationBtn = document.querySelector('.btn-consultation');
-    consultationBtn.addEventListener('click', function() {
-        console.log('Consultation button clicked');
-        // Add your consultation button functionality here
-    });
+    if (consultationBtn) {
+        consultationBtn.addEventListener('click', function() {
+            console.log('Consultation button clicked');
+            // Add your consultation button functionality here
+        });
+    }
 
     // FAQ functionality
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            // Toggle aria-expanded attribute
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            
-            // Get the answer container
-            const answer = this.nextElementSibling;
-            
-            // Toggle active class on answer
-            answer.classList.toggle('active');
-            
-            // Close other open answers
-            faqQuestions.forEach(otherQuestion => {
-                if (otherQuestion !== question) {
-                    otherQuestion.setAttribute('aria-expanded', 'false');
-                    otherQuestion.nextElementSibling.classList.remove('active');
+        if (question) {
+            question.addEventListener('click', function() {
+                // Toggle aria-expanded attribute
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                
+                // Get the answer container
+                const answer = this.nextElementSibling;
+                if (answer) {
+                    // Toggle active class on answer
+                    answer.classList.toggle('active');
                 }
+                
+                // Close other open answers
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question) {
+                        otherQuestion.setAttribute('aria-expanded', 'false');
+                        const otherAnswer = otherQuestion.nextElementSibling;
+                        if (otherAnswer) {
+                            otherAnswer.classList.remove('active');
+                        }
+                    }
+                });
             });
-        });
+        }
     });
 
     // Testimonials Slider functionality
@@ -243,41 +251,59 @@ document.addEventListener('DOMContentLoaded', function() {
         dots.forEach(dot => dot.classList.remove('active'));
 
         // Add active class to current slide and dot
-        testimonialItems[index].classList.add('active');
-        dots[index].classList.add('active');
+        if (testimonialItems[index]) {
+            testimonialItems[index].classList.add('active');
+        }
+        if (dots[index]) {
+            dots[index].classList.add('active');
+        }
     }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % testimonialItems.length;
-        showSlide(currentSlide);
+        if (testimonialItems.length > 0) {
+            currentSlide = (currentSlide + 1) % testimonialItems.length;
+            showSlide(currentSlide);
+        }
     }
 
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + testimonialItems.length) % testimonialItems.length;
-        showSlide(currentSlide);
+        if (testimonialItems.length > 0) {
+            currentSlide = (currentSlide - 1 + testimonialItems.length) % testimonialItems.length;
+            showSlide(currentSlide);
+        }
     }
 
     // Event listeners for navigation
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
 
     // Event listeners for dots
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
-            showSlide(currentSlide);
-        });
+        if (dot) {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        }
     });
 
-    // Auto-advance slides every 5 seconds
-    setInterval(nextSlide, 5000);
+    // Auto-advance slides every 5 seconds if there are testimonials
+    if (testimonialItems.length > 0) {
+        setInterval(nextSlide, 5000);
+    }
 
     // FAQ contact button
     const contactBtn = document.querySelector('.contact-btn');
-    contactBtn.addEventListener('click', function() {
-        console.log('Contact button clicked');
-        // Add your contact button functionality here
-    });
+    if (contactBtn) {
+        contactBtn.addEventListener('click', function() {
+            console.log('Contact button clicked');
+            // Add your contact button functionality here
+        });
+    }
 
     // Form handling
     const pilotForm = document.getElementById('pilotApplicationForm');
@@ -304,12 +330,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Feature card hover effect
     const featureCards = document.querySelectorAll('.feature-card');
     featureCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
+        if (card) {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        }
     });
 });
