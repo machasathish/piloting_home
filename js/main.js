@@ -5,7 +5,7 @@
  */
 
 // Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
   // Navbar scroll behavior
   $(window).scroll(function() {
     if ($(this).scrollTop() > 50) {
@@ -23,171 +23,128 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Go to Top button click handler
-  const goToTopButton = document.getElementById('goToTop');
-  if (goToTopButton) {
-    goToTopButton.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      return false;
-    });
-  }
+  $('#goToTop').on('click', function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 800, 'easeInOutQuart');
+    return false;
+  });
 
   // Smooth scrolling for anchor links
-  document.querySelectorAll('a.nav-link, a.btn, a.footer-link').forEach(link => {
-    link.addEventListener('click', function(event) {
-      if (this.hash !== "") {
-        event.preventDefault();
-        const hash = this.hash;
-        const target = document.querySelector(hash);
-        
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop - 70,
-            behavior: 'smooth'
-          });
-        }
-      }
-    });
+  $('a.nav-link, a.btn, a.footer-link').on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      const hash = this.hash;
+      
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top - 70
+      }, 800);
+    }
   });
 
   // Mobile menu collapse when clicking on a link
-  const navLinks = document.querySelectorAll('.navbar-nav>li>a');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
-  
-  if (navLinks && navbarCollapse) {
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        navbarCollapse.classList.remove('show');
-      });
-    });
-  }
+  $('.navbar-nav>li>a').on('click', function(){
+    $('.navbar-collapse').collapse('hide');
+  });
 
   // Initialize Bootstrap tooltips
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  if (tooltipTriggerList.length > 0) {
-    tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  }
+  tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 
   // Lazy load icons and images
   const lazyElements = document.querySelectorAll('.lazy-load');
   
-  if (lazyElements.length > 0) {
-    const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const element = entry.target;
-          if (element.tagName === 'I') {
-            const iconClass = element.dataset.icon;
-            if (iconClass) {
-              element.className = iconClass;
-            }
-          } else if (element.tagName === 'IMG') {
-            element.src = element.dataset.src;
-            element.classList.remove('lazy-load');
+  const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const element = entry.target;
+        if (element.tagName === 'I') {
+          const iconClass = element.dataset.icon;
+          if (iconClass) {
+            element.className = iconClass;
           }
-          observer.unobserve(element);
+        } else if (element.tagName === 'IMG') {
+          element.src = element.dataset.src;
+          element.classList.remove('lazy-load');
         }
-      });
+        observer.unobserve(element);
+      }
     });
+  });
 
-    lazyElements.forEach(element => {
-      lazyLoadObserver.observe(element);
-    });
-  }
+  lazyElements.forEach(element => {
+    lazyLoadObserver.observe(element);
+  });
 
   // Scroll reveal animations with performance optimization
   const revealElements = document.querySelectorAll('.reveal');
   const staggerElements = document.querySelectorAll('.stagger-reveal');
 
-  if (revealElements.length > 0 || staggerElements.length > 0) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '50px'
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        revealObserver.unobserve(entry.target);
+      }
     });
+  }, {
+    threshold: 0.1,
+    rootMargin: '50px'
+  });
 
-    revealElements.forEach(element => {
-      revealObserver.observe(element);
-    });
+  revealElements.forEach(element => {
+    revealObserver.observe(element);
+  });
 
-    staggerElements.forEach(element => {
-      revealObserver.observe(element);
-    });
-  }
+  staggerElements.forEach(element => {
+    revealObserver.observe(element);
+  });
 
   // Add animation classes to elements
-  const heroContent = document.querySelector('.hero-content');
-  if (heroContent) {
-    heroContent.classList.add('fade-in');
-  }
+  $('.hero-content').addClass('fade-in');
+  $('.benefit-item').addClass('reveal');
+  $('.feature-item').addClass('reveal');
+  $('.journey-step').addClass('stagger-reveal');
+  $('.usa-benefit-card').addClass('reveal');
 
-  document.querySelectorAll('.benefit-item').forEach(item => {
-    item.classList.add('reveal');
+  // Testimonial carousel with optimized transitions
+  $('.carousel').carousel({
+    interval: 5000,
+    pause: "hover"
   });
-
-  document.querySelectorAll('.feature-item').forEach(item => {
-    item.classList.add('reveal');
-  });
-
-  document.querySelectorAll('.journey-step').forEach(item => {
-    item.classList.add('stagger-reveal');
-  });
-
-  document.querySelectorAll('.usa-benefit-card').forEach(item => {
-    item.classList.add('reveal');
-  });
-
-  // Testimonial carousel
-  const carousel = document.querySelector('.carousel');
-  if (carousel) {
-    new bootstrap.Carousel(carousel, {
-      interval: 5000,
-      pause: "hover"
-    });
-  }
 
   // Add custom active class to first collapsible element
-  const firstAccordionButton = document.querySelector('.accordion-button:first-child');
-  const firstAccordionCollapse = document.querySelector('.accordion-collapse:first-child');
-  
-  if (firstAccordionButton) {
-    firstAccordionButton.classList.remove('collapsed');
-  }
-  if (firstAccordionCollapse) {
-    firstAccordionCollapse.classList.add('show');
-  }
+  $('.accordion-button:first').removeClass('collapsed');
+  $('.accordion-collapse:first').addClass('show');
 
-  // Initialize logo
+  // Optimized logo creation
   createLogo();
 });
 
-// Function to create a dynamic logo
+// Function to create a dynamic SVG logo
 function createLogo() {
   const logoSrc = 'img/logo.svg';
   const logoWhiteSrc = 'img/logo-white.svg';
   
-  const navBrand = document.querySelector('.navbar-brand');
-  if (navBrand && !navBrand.querySelector('.logo')) {
+  if (!document.querySelector('.logo')) {
     const logoImg = document.createElement('img');
     logoImg.src = logoSrc;
     logoImg.alt = 'PILOTING Logo';
     logoImg.className = 'logo';
-    navBrand.appendChild(logoImg);
+    
+    const navBrand = document.querySelector('.navbar-brand');
+    if (navBrand) {
+      navBrand.appendChild(logoImg);
+    }
   }
   
-  const footerLogo = document.querySelector('.footer-logo');
-  if (footerLogo) {
-    footerLogo.src = logoWhiteSrc;
+  if (!document.querySelector('.footer-logo')) {
+    const footerLogo = document.querySelector('.footer-logo');
+    if (footerLogo) {
+      footerLogo.src = logoWhiteSrc;
+    }
   }
 }
 
@@ -235,7 +192,7 @@ const recordPerformanceMetrics = () => {
 };
 
 // Call preload and performance monitoring on window load
-window.addEventListener('load', async function() {
+window.onload = async function() {
   await preloadImages();
   recordPerformanceMetrics();
-});
+};
