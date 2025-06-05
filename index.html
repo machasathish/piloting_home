@@ -28,7 +28,7 @@
         </h3>
       </a> -->
       <div class="logo logo-dark logo-flex">
-        <a href="index#" class="navbar-brand logo-link-flex logo_badge logo">
+        <a href="index.html" class="navbar-brand logo-link-flex logo_badge logo">
           <img src="img/logo.png" alt="PILOTING Logo">
           <!-- <h3 id="animated-title" class="title animated-title">
                                 </h3> -->
@@ -46,12 +46,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#benefits">Benefits</a></li>
-          <li class="nav-item"><a class="nav-link" href="#journey">Your Journey</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials">Success Stories</a></li>
-          <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="benefits.html">Benefits</a></li>
+          <li class="nav-item"><a class="nav-link" href="journey.html">Your Journey</a></li>
+          <li class="nav-item"><a class="nav-link" href="testimonials.html">Success Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           <li class="nav-item ms-3"><a class="btn btn-primary" href="#apply">Apply Now</a></li>
         </ul>
       </div>
@@ -1585,32 +1585,7 @@
   </script> -->
 
   <script>
-    const title = "PILOTING FOR PILOTS";
-    const container = document.getElementById('animated-title');
-    container.innerHTML = ""; // Clear existing text
-
-    const words = title.split(" ");
-    words.forEach((word, i) => {
-      const span = document.createElement("span");
-      span.textContent = word;
-      span.className = "word";
-      span.style.opacity = 0;
-      span.style.transition = "opacity 0.5s, transform 0.5s";
-      span.style.display = "inline-block";
-      span.style.transform = "translateY(20px)";
-      span.style.marginRight = "8px";
-      container.appendChild(span);
-
-      // Add a line break after each word except the last
-      if (i < words.length - 1) {
-        container.appendChild(document.createElement("br"));
-      }
-
-      setTimeout(() => {
-        span.style.opacity = 1;
-        span.style.transform = "translateY(0)";
-      }, 400 * i);
-    });
+    
 
 
     // testimonials
